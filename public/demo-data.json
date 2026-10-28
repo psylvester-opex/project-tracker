@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "areas": [
+    {
+      "id": "a_cm5fzuzi37yj",
+      "title": "Technology Strategy & Operating Model",
+      "projects": [
+        {
+          "id": "p_7izi0qgl37yj",
+          "title": "Stand up the target IT organization",
+          "status": "active",
+          "priority": "high",
+          "owner": "J. Rivera",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_i6pddw9q37yj",
+              "title": "Finalize role descriptions with HR",
+              "owner": "J. Rivera",
+              "nextDate": "2026-10-26",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_3uaqahke37yj",
+              "title": "Communicate new reporting lines to the team",
+              "owner": "",
+              "nextDate": "2026-11-04",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_b3xaqxhv37yj",
+              "title": "Backfill two open developer roles",
+              "owner": "M. Chen",
+              "nextDate": "2026-11-20",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            }
+          ]
+        },
+        {
+          "id": "p_4s97313y37yj",
+          "title": "Launch quarterly technology investment review",
+          "status": "planned",
+          "priority": "medium",
+          "owner": "",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_cpty2gpo37yj",
+              "title": "Draft review template and scoring criteria",
+              "owner": "",
+              "nextDate": "",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_dn0ccaxd37yj",
+              "title": "Agree cadence with finance leadership",
+              "owner": "",
+              "nextDate": "",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a_tl4e3mz237yj",
+      "title": "AI & Automation",
+      "projects": [
+        {
+          "id": "p_fz61w3yf37yj",
+          "title": "Roll out AI assistant to knowledge workers",
+          "status": "active",
+          "priority": "high",
+          "owner": "A. Patel",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_sm6yy0nb37yj",
+              "title": "Publish acceptable-use guidance",
+              "owner": "A. Patel",
+              "nextDate": "2026-10-30",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_n3ue5k1h37yj",
+              "title": "Run pilot training sessions",
+              "owner": "S. Okafor",
+              "nextDate": "2026-11-06",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_st8rwa0537yj",
+              "title": "Measure adoption after 30 days",
+              "owner": "",
+              "nextDate": "2026-12-01",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_63mga6yk37yj",
+              "title": "Collect pilot feedback survey",
+              "owner": "S. Okafor",
+              "nextDate": "2026-10-20",
+              "status": "done",
+              "notes": "",
+              "doneAt": "2026-10-20"
+            }
+          ]
+        },
+        {
+          "id": "p_v6ir9l7g37yj",
+          "title": "Establish AI governance council",
+          "status": "planned",
+          "priority": "",
+          "owner": "",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_elamco7f37yk",
+              "title": "Define membership and decision rights",
+              "owner": "",
+              "nextDate": "",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a_khxvawz337yk",
+      "title": "Data & Analytics",
+      "projects": [
+        {
+          "id": "p_8ofo967z37yk",
+          "title": "Build enterprise data platform foundation",
+          "status": "active",
+          "priority": "medium",
+          "owner": "M. Chen",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_a3zhfk6w37yk",
+              "title": "Provision landing zone and workspaces",
+              "owner": "M. Chen",
+              "nextDate": "2026-11-03",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_xvof5aco37yk",
+              "title": "Agree data ownership model",
+              "owner": "",
+              "nextDate": "",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            }
+          ]
+        },
+        {
+          "id": "p_9fbgs5oq37yk",
+          "title": "Rationalize legacy reports",
+          "status": "on-hold",
+          "priority": "low",
+          "owner": "",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_ooxge8jk37yk",
+              "title": "Inventory current report catalog",
+              "owner": "",
+              "nextDate": "",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a_7j8uggfm37yk",
+      "title": "Security & Risk",
+      "projects": [
+        {
+          "id": "p_phg8atwq37yk",
+          "title": "Deploy privileged access management",
+          "status": "active",
+          "priority": "high",
+          "owner": "K. Novak",
+          "targetDate": "",
+          "notes": "",
+          "actions": [
+            {
+              "id": "t_uz22s87m37yk",
+              "title": "Select tooling option",
+              "owner": "K. Novak",
+              "nextDate": "2026-10-24",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            },
+            {
+              "id": "t_02151v8g37yk",
+              "title": "Remove standing admin rights",
+              "owner": "",
+              "nextDate": "",
+              "status": "open",
+              "notes": "",
+              "doneAt": ""
+            }
+          ]
+        },
+        {
+          "id": "p_u296rr3y37yk",
+          "title": "Harden file-transfer services",
+          "status": "planned",
+          "priority": "medium",
+          "owner": "",
+          "targetDate": "",
+          "notes": "",
+          "actions": []
+        }
+      ]
+    }
+  ]
+}

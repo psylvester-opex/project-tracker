@@ -1,0 +1,15 @@
+{
+  "name": "it-priorities-tracker",
+  "version": "1.0.0",
+  "description": "Web app for tracking IT strategic areas, projects, and next actions",
+  "private": true,
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

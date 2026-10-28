@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Priorities</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%232563eb'/><path d='M4 5h8M4 8h6M4 11h4' stroke='white' stroke-width='1.6' stroke-linecap='round'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>IT Priorities</h1>
+      <span id="saveState" class="save-state" aria-live="polite"></span>
+    </div>
+    <nav class="views" role="tablist">
+      <button role="tab" data-view="portfolio" class="active">Portfolio</button>
+      <button role="tab" data-view="agenda">Agenda</button>
+    </nav>
+    <div class="top-actions">
+      <button id="undoBtn" class="ghost" title="Undo (Ctrl+Z)" disabled>Undo</button>
+      <div class="menu-wrap">
+        <button id="menuBtn" class="ghost" aria-haspopup="true" aria-expanded="false">Data ▾</button>
+        <div id="menu" class="menu" hidden>
+          <button data-cmd="import">Import from Excel / CSV / JSON…</button>
+          <button data-cmd="export-xlsx">Export to Excel</button>
+          <button data-cmd="export-json">Download JSON backup</button>
+          <button data-cmd="backups" class="server-only">Restore from server backup…</button>
+          <hr>
+          <button data-cmd="load-demo">Load demo data</button>
+        </div>
+      </div>
+      <input id="fileInput" type="file" accept=".xlsx,.xlsm,.csv,.tsv,.json" hidden>
+    </div>
+  </header>
+
+  <section class="summary" id="summary" aria-label="Summary"></section>
+
+  <section class="toolbar" aria-label="Filters">
+    <input id="search" type="search" placeholder="Search projects, actions, owners, notes…" autocomplete="off">
+    <div class="chips" id="statusChips" role="group" aria-label="Project status"></div>
+    <select id="ownerFilter" aria-label="Owner"><option value="">All owners</option></select>
+    <select id="dueFilter" aria-label="Due">
+      <option value="">Any date</option>
+      <option value="overdue">Overdue</option>
+      <option value="week">Due in 7 days</option>
+      <option value="next">Due in 14 days</option>
+      <option value="none">No date</option>
+    </select>
+    <label class="check"><input type="checkbox" id="showDone"> Show completed</label>
+    <span class="spacer"></span>
+    <button id="expandAll" class="ghost portfolio-only">Expand all</button>
+    <button id="collapseAll" class="ghost portfolio-only">Collapse all</button>
+    <button id="addArea" class="primary portfolio-only">+ Strategic area</button>
+  </section>
+
+  <main id="main"></main>
+
+  <aside id="drawer" class="drawer" hidden aria-label="Details">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Details</h2>
+      <button id="drawerClose" class="ghost icon" aria-label="Close">✕</button>
+    </div>
+    <div id="drawerBody" class="drawer-body"></div>
+  </aside>
+
+  <dialog id="dialog"><form method="dialog" id="dialogForm"></form></dialog>
+  <div id="toast" class="toast" hidden></div>
+
+  <datalist id="ownerList"></datalist>
+
+  <script src="model.js"></script>
+  <script src="xlsx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

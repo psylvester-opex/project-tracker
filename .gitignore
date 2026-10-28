@@ -147,3 +147,7 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Tracker data — never commit real portfolio data (this repo is public)
+data/*
+!data/.gitkeep
