@@ -151,3 +151,6 @@ vite.config.ts.timestamp-*
 # Tracker data — never commit real portfolio data (this repo is public)
 data/*
 !data/.gitkeep
+
+# Standalone builds may embed real data
+dist/

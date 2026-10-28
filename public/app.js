@@ -28,7 +28,7 @@
   const filters = { q: '', owner: '', due: '' };
 
   function readJSON(key) { try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; } }
-  function writeJSON(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } }
+  function writeJSON(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); return true; } catch (e) { return false; } }
   function saveUI() { writeJSON(LS_UI, ui); }
 
   // ---------- Lookup ----------
@@ -84,8 +84,8 @@
     if (!dirty) return;
     dirty = false;
     if (mode === 'local') {
-      writeJSON(LS_DOC, doc);
-      setSaveState('Saved in this browser');
+      if (writeJSON(LS_DOC, doc)) setSaveState('Saved in this browser');
+      else setSaveState('Not saved: this browser blocks storage. Use Data → Download JSON backup', true);
       return;
     }
     saving = true;
@@ -149,8 +149,12 @@
     } catch (e) {
       mode = 'local';
       const local = readJSON(LS_DOC);
-      doc = local ? M.normalize(local) : null;
-      setSaveState('Saved in this browser');
+      // The standalone build can carry starting data; browser storage wins once it exists.
+      const seed = local || window.EMBEDDED_DATA || null;
+      doc = seed ? M.normalize(seed) : null;
+      if (!writeJSON(LS_DOC + '.probe', 1)) setSaveState('Changes won\u2019t be kept: this browser blocks storage', true);
+      else if (!local && seed) setSaveState(writeJSON(LS_DOC, doc) ? 'Saved in this browser' : '');
+      else setSaveState('Saved in this browser');
     }
     document.body.classList.toggle('server-mode', mode === 'server');
     loaded = Boolean(doc);
@@ -721,8 +725,11 @@
 
   async function loadDemo() {
     if (doc.areas.length && await ask({ title: 'Load demo data?', body: 'This replaces the current tracker contents. Use Undo to go back.', buttons: [['ok', 'Load demo']] }) !== 'ok') return;
-    const res = await fetch('demo-data.json');
-    replaceDoc(M.normalize(await res.json()));
+    let demo;
+    try { demo = await (await fetch('demo-data.json')).json(); } catch (e) {
+      return ask({ title: 'Demo data unavailable', body: 'Demo data is only included in the full app, not this single-file version.', buttons: [['ok', 'OK']], noCancel: true });
+    }
+    replaceDoc(M.normalize(demo));
   }
 
   // ---------- Dialog & toast ----------
